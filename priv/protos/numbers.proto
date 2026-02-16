@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package GrpcBackpressure;
+
+message Request {}
+
+message Response {
+  int64 number = 1;
+}
+
+service Numbers {
+  rpc GetNumbers (Request) returns (stream Response) {}
+}
